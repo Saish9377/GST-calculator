@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import { Header } from "@/components/layout/Header";
@@ -75,6 +76,21 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        {/* Google Analytics (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-0HZMV5FPGG"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-0HZMV5FPGG');
+          `}
+        </Script>
+
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
