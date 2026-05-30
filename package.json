@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview"
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "build:cf": "opennextjs-cloudflare build"
   },
   "dependencies": {
     "@emnapi/core": "^1.10.0",
