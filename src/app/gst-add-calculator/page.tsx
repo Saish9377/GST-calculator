@@ -2,9 +2,20 @@ import type { Metadata } from 'next';
 import { CalculatorPage } from '@/components/seo/CalculatorPage';
 
 export const metadata: Metadata = {
-  title: 'GST Add Calculator — Add GST to Any Amount Online',
-  description: 'Free GST Add Calculator to quickly add GST to any amount. Get instant CGST, SGST, IGST breakdown with all GST rates: 5%, 12%, 18%, 28%.',
+  title: 'GST Inclusive Calculator — Add GST to Base Amount Online',
+  description: 'Easily calculate the final price including GST. Input base amount, choose tax rate (5%, 12%, 18%, 28%), and get a detailed tax split instantly.',
 };
+
+const faqs = [
+  {
+    question: 'What is a GST inclusive calculator?',
+    answer: 'A GST inclusive calculator (or GST addition calculator) is a tool used to calculate the final price of a product or service after adding the Goods and Services Tax (GST) to the original base cost.',
+  },
+  {
+    question: 'How do I calculate GST inclusive price manually?',
+    answer: 'To calculate GST inclusive price manually: Multiply the base amount by the GST rate, divide by 100 to get the GST amount, and then add this GST amount to the original base amount. Formula: Total Price = Base Price + (Base Price * GST Rate / 100).',
+  },
+];
 
 export default function GSTAddCalculatorPage() {
   return (
@@ -13,6 +24,7 @@ export default function GSTAddCalculatorPage() {
       subtitle="Add GST to any base amount and get the total with CGST, SGST, and IGST breakdown."
       defaultMode="add"
       defaultRate={18}
+      faqs={faqs}
     >
       <h2 className="text-2xl font-bold text-foreground mb-4">How to Add GST to an Amount?</h2>
       <p className="text-muted leading-relaxed mb-4">

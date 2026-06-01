@@ -16,6 +16,12 @@ import { TaxSummaryCard } from '@/components/calculator/TaxSummaryCard';
 import { ActionButtons } from '@/components/calculator/ActionButtons';
 import { HiCalculator } from 'react-icons/hi2';
 import type { GSTMode, StateType } from '@/lib/gst-calculator';
+import { usePathname } from 'next/navigation';
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
 
 interface CalculatorPageProps {
   title: string;
@@ -23,6 +29,7 @@ interface CalculatorPageProps {
   defaultRate?: number;
   defaultMode?: GSTMode;
   defaultStateType?: StateType;
+  faqs?: FAQItem[];
   children?: React.ReactNode; // Page-specific content below calculator
 }
 
@@ -32,6 +39,7 @@ export function CalculatorPage({
   defaultRate = 18,
   defaultMode = 'add',
   defaultStateType = 'intra',
+  faqs,
   children,
 }: CalculatorPageProps) {
   const calculator = useGSTCalculator({
@@ -40,8 +48,51 @@ export function CalculatorPage({
     defaultStateType,
   });
 
+  const pathname = usePathname();
+  const url = `https://gstcalculator.in${pathname}`;
+
+  const webAppSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    'name': title,
+    'url': url,
+    'description': subtitle,
+    'applicationCategory': 'FinanceApplication',
+    'operatingSystem': 'All',
+    'offers': {
+      '@type': 'Offer',
+      'price': '0',
+      'priceCurrency': 'INR',
+    },
+  };
+
+  const faqSchema = faqs
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': faqs.map((faq) => ({
+          '@type': 'Question',
+          'name': faq.question,
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': faq.answer,
+          },
+        })),
+      }
+    : null;
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-indigo-950/40 dark:via-background dark:to-purple-950/30" />

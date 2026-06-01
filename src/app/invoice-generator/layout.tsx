@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'GST Invoice Generator — Create Professional Tax Invoices Free',
-  description: 'Free GST Invoice Generator. Add seller/buyer details, GSTIN, multiple items with different GST rates, and download professional PDF invoices instantly.',
+  title: 'Free GST Invoice Generator — Create & Download PDF Invoice',
+  description: 'Create professional, GST-compliant tax invoices online. Add logo, buyer & seller GSTINs, itemized taxes, and download free PDF. No registration required.',
 };
 
 export default function InvoiceLayout({ children }: { children: React.ReactNode }) {

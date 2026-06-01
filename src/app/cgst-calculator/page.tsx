@@ -3,8 +3,19 @@ import { CalculatorPage } from '@/components/seo/CalculatorPage';
 
 export const metadata: Metadata = {
   title: 'CGST Calculator — Calculate Central GST Online',
-  description: 'Free CGST Calculator for intra-state transactions. CGST is half of the total GST rate collected by the Central Government.',
+  description: 'Calculate Central Goods and Services Tax (CGST) easily. Learn CGST rules, formulas, and how it splits on intra-state transactions.',
 };
+
+const faqs = [
+  {
+    question: 'What is CGST?',
+    answer: 'CGST stands for Central Goods and Services Tax. It is the tax collected by the Central Government of India on transactions that happen within a single state (intra-state).',
+  },
+  {
+    question: 'How is CGST split with SGST?',
+    answer: 'For all intra-state transactions, the total GST is split equally into Central GST (CGST) and State GST (SGST). For example, if a product is taxed at 18% GST, CGST will be 9% and SGST will be 9%.',
+  },
+];
 
 export default function CGSTCalculatorPage() {
   return (
@@ -14,6 +25,7 @@ export default function CGSTCalculatorPage() {
       defaultMode="add"
       defaultRate={18}
       defaultStateType="intra"
+      faqs={faqs}
     >
       <h2 className="text-2xl font-bold text-foreground mb-4">What is CGST?</h2>
       <p className="text-muted leading-relaxed mb-4">

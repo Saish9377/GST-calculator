@@ -3,8 +3,19 @@ import { CalculatorPage } from '@/components/seo/CalculatorPage';
 
 export const metadata: Metadata = {
   title: 'SGST Calculator — Calculate State GST Online',
-  description: 'Free SGST Calculator for intra-state transactions. SGST is half of the total GST rate collected by the State Government.',
+  description: 'State GST (SGST) online calculator. Calculate SGST on goods and services for intra-state transactions instantly and accurately.',
 };
+
+const faqs = [
+  {
+    question: 'What is SGST?',
+    answer: 'SGST stands for State Goods and Services Tax. It is the tax collected by the State Government of India on transactions that occur within that specific state (intra-state).',
+  },
+  {
+    question: 'Is SGST different from CGST?',
+    answer: 'While SGST goes to the State Government and CGST goes to the Central Government, they are calculated on the same intra-state transaction, and their rates are always equal.',
+  },
+];
 
 export default function SGSTCalculatorPage() {
   return (
@@ -14,6 +25,7 @@ export default function SGSTCalculatorPage() {
       defaultMode="add"
       defaultRate={18}
       defaultStateType="intra"
+      faqs={faqs}
     >
       <h2 className="text-2xl font-bold text-foreground mb-4">What is SGST?</h2>
       <p className="text-muted leading-relaxed mb-4">

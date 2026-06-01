@@ -3,8 +3,19 @@ import { CalculatorPage } from '@/components/seo/CalculatorPage';
 
 export const metadata: Metadata = {
   title: 'IGST Calculator — Calculate Integrated GST Online',
-  description: 'Free IGST Calculator for inter-state transactions. IGST is the full GST rate charged on transactions between different states.',
+  description: 'Calculate Integrated GST (IGST) for inter-state business transactions. Free tool with calculation formulas and tax rate details.',
 };
+
+const faqs = [
+  {
+    question: 'What is IGST?',
+    answer: 'IGST stands for Integrated Goods and Services Tax. It is the tax levied under GST on all inter-state supplies of goods and services (supplies from one state to another).',
+  },
+  {
+    question: 'Who collects IGST?',
+    answer: 'IGST is collected by the Central Government of India, which is then distributed to the consumption/destination state.',
+  },
+];
 
 export default function IGSTCalculatorPage() {
   return (
@@ -14,6 +25,7 @@ export default function IGSTCalculatorPage() {
       defaultMode="add"
       defaultRate={18}
       defaultStateType="inter"
+      faqs={faqs}
     >
       <h2 className="text-2xl font-bold text-foreground mb-4">What is IGST?</h2>
       <p className="text-muted leading-relaxed mb-4">

@@ -2,9 +2,20 @@ import type { Metadata } from 'next';
 import { CalculatorPage } from '@/components/seo/CalculatorPage';
 
 export const metadata: Metadata = {
-  title: '18% GST Calculator — Calculate 18 Percent GST Online',
-  description: 'Calculate 18% GST instantly. Most services, electronics, and financial services fall under the 18% GST slab. Get CGST 9% and SGST 9% breakdown.',
+  title: '18% GST Calculator — Instant Tax Calculation & Formula',
+  description: 'Calculate 18% GST on services, IT, and electronic items. View calculations with and without CGST/SGST splits instantly.',
 };
+
+const faqs = [
+  {
+    question: 'Which items attract 18% GST in India?',
+    answer: 'The 18% GST rate is applicable to a broad range of products and services, including IT services, telecom, financial services, AC restaurant services, and household items like soaps and toothpastes.',
+  },
+  {
+    question: 'How is 18% GST split for intra-state sales?',
+    answer: 'For sales within the same state, 18% GST is split equally into 9% CGST (Central GST) and 9% SGST (State GST).',
+  },
+];
 
 export default function GST18PercentPage() {
   return (
@@ -13,6 +24,7 @@ export default function GST18PercentPage() {
       subtitle="Calculate 18% GST on any amount with CGST (9%) and SGST (9%) breakdown."
       defaultRate={18}
       defaultMode="add"
+      faqs={faqs}
     >
       <h2 className="text-2xl font-bold text-foreground mb-4">What Items Fall Under 18% GST?</h2>
       <p className="text-muted leading-relaxed mb-4">

@@ -48,7 +48,12 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground text-sm">Email</h3>
-                    <p className="text-sm text-muted mt-1">support@gstcalculator.in</p>
+                    <a
+                      href="mailto:saishshinde92@gmail.com"
+                      className="text-sm text-muted mt-1 block hover:text-primary transition-colors"
+                    >
+                      saishshinde92@gmail.com
+                    </a>
                   </div>
                 </div>
               </div>

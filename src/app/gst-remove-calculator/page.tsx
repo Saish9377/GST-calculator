@@ -2,9 +2,20 @@ import type { Metadata } from 'next';
 import { CalculatorPage } from '@/components/seo/CalculatorPage';
 
 export const metadata: Metadata = {
-  title: 'GST Remove Calculator — Remove GST from Any Amount',
-  description: 'Free GST Remove Calculator to extract GST from a tax-inclusive amount. Find the original base amount before GST was added.',
+  title: 'GST Exclusive Calculator — Remove GST from Total Price',
+  description: 'Free online tool to remove GST from a total invoice value. Calculate original base price and total tax components in one click.',
 };
+
+const faqs = [
+  {
+    question: 'What is a GST exclusive calculator?',
+    answer: 'A GST exclusive calculator (or GST removal calculator) is a tool designed to calculate the original base price and the tax component from an all-inclusive price that already contains Goods and Services Tax (GST).',
+  },
+  {
+    question: 'How do I remove GST from a total amount manually?',
+    answer: 'To remove GST from a total amount: Divide the total amount by (1 + GST rate/100) to find the original base price. Then, subtract this base price from the total amount to find the tax amount. Formula: Base Price = Total Price / (1 + GST Rate / 100).',
+  },
+];
 
 export default function GSTRemoveCalculatorPage() {
   return (
@@ -13,6 +24,7 @@ export default function GSTRemoveCalculatorPage() {
       subtitle="Remove GST from a tax-inclusive amount to find the original base price."
       defaultMode="remove"
       defaultRate={18}
+      faqs={faqs}
     >
       <h2 className="text-2xl font-bold text-foreground mb-4">How to Remove GST from a Total Amount?</h2>
       <p className="text-muted leading-relaxed mb-4">
