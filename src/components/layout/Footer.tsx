@@ -21,9 +21,11 @@ const taxLinks = [
 ];
 
 const companyLinks = [
-  { href: '/invoice-generator', label: 'Invoice Generator' },
-  { href: '/faq', label: 'FAQ' },
+  { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact Us' },
+  { href: '/privacy-policy', label: 'Privacy Policy' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/faq', label: 'FAQ' },
 ];
 
 export function Footer() {

@@ -29,8 +29,8 @@ export default function ContactPage() {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight mb-3">
               Contact <span className="gradient-text">Us</span>
             </h1>
-            <p className="text-lg text-muted max-w-2xl mx-auto leading-relaxed">
-              Have questions or suggestions? We&apos;d love to hear from you
+            <p className="text-sm sm:text-base text-muted max-w-2xl mx-auto leading-relaxed mt-2">
+              We are committed to providing you with the most accurate and reliable tax computation experience on GST Calculator India. Whether you are a small business owner, a startup founder, an accounting professional, or a retail consumer with feedback, suggestions, or technical support requests, we are here to help. You can easily reach out to us using the contact form below or by writing directly to our official support email. Our team reviews all suggestions, bug reports, and rate update queries diligently. We aim to respond to all inquiries within 24 business hours. Thank you for your support!
             </p>
           </div>
         </div>

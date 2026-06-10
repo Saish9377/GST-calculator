@@ -5,7 +5,7 @@
 // ============================================================
 
 import Link from 'next/link';
-import { HiCalculator, HiDocumentText, HiQuestionMarkCircle, HiEnvelope } from 'react-icons/hi2';
+import { HiCalculator, HiDocumentText, HiQuestionMarkCircle, HiEnvelope, HiBookOpen } from 'react-icons/hi2';
 
 interface NavLink {
   href: string;
@@ -21,6 +21,7 @@ interface MobileNavProps {
 const iconMap: Record<string, React.ReactNode> = {
   Calculator: <HiCalculator className="w-5 h-5" />,
   Invoice: <HiDocumentText className="w-5 h-5" />,
+  Blog: <HiBookOpen className="w-5 h-5" />,
   FAQ: <HiQuestionMarkCircle className="w-5 h-5" />,
   Contact: <HiEnvelope className="w-5 h-5" />,
 };

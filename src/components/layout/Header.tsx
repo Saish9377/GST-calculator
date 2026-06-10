@@ -13,6 +13,7 @@ import { MobileNav } from './MobileNav';
 const navLinks = [
   { href: '/', label: 'Calculator' },
   { href: '/invoice-generator', label: 'Invoice' },
+  { href: '/blog', label: 'Blog' },
   { href: '/faq', label: 'FAQ' },
   { href: '/contact', label: 'Contact' },
 ];
